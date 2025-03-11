@@ -1,0 +1,79 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.svg",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/home",
+      "dest": "/home.html"
+    },
+    {
+      "src": "/welcome",
+      "dest": "/welcome.html"
+    },
+    {
+      "src": "/ai_chat",
+      "dest": "/ai_chat.html"
+    },
+    {
+      "src": "/solution_design",
+      "dest": "/solution_design.html"
+    },
+    {
+      "src": "/security_assessment",
+      "dest": "/security_assessment.html"
+    },
+    {
+      "src": "/expert_consult",
+      "dest": "/expert_consult.html"
+    },
+    {
+      "src": "/expert_detail",
+      "dest": "/expert_detail.html"
+    },
+    {
+      "src": "/devices",
+      "dest": "/devices.html"
+    },
+    {
+      "src": "/activities",
+      "dest": "/activities.html"
+    },
+    {
+      "src": "/knowledge",
+      "dest": "/knowledge.html"
+    },
+    {
+      "src": "/profile",
+      "dest": "/profile.html"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "/$1"
+    }
+  ]
+} 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安安 - 活动记录</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .activity-item {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .activity-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--primary-color);
+        }
+        .activity-icon {
+            transition: all 0.3s ease;
+        }
+        .activity-item:hover .activity-icon {
+            transform: scale(1.1);
+        }
+        .date-divider {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .date-divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gray-lighter);
+            z-index: 0;
+        }
+        .date-divider span {
+            position: relative;
+            background: var(--light-color);
+            padding: 0 15px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="status-bar">
+        <div class="time">12:30</div>
+        <div class="icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="title">活动记录</div>
+        <div class="action" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content pb-20 animate-fade-in">
+        <!-- 活动筛选 -->
+        <div class="flex overflow-x-auto py-2 mb-4 no-scrollbar">
+            <div class="flex-shrink-0 px-4 py-2 bg-primary-color text-white rounded-full mr-2">全部活动</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">门锁</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">摄像头</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">传感器</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">报警</div>
+        </div>
+
+        <!-- 活动统计 -->
+        <div class="card mb-6 gradient-bg">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-white">今日活动统计</h3>
+                <span class="badge bg-white text-primary-color">15条记录</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-primary-color">8</div>
+                    <div class="text-xs text-gray-600">门锁操作</div>
+                </div>
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-warning-color">5</div>
+                    <div class="text-xs text-gray-600">移动检测</div>
+                </div>
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-danger-color">2</div>
+                    <div class="text-xs text-gray-600">异常警报</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 今日活动 -->
+        <h3 class="text-lg font-bold mb-4 text-gray-800">今日活动</h3>
+        
+        <div class="card">
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-3">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">前门已开启</p>
+                    <p class="text-xs text-gray-500">今天 11:30 - 张先生</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    2分钟前
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-3">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">检测到异常活动</p>
+                    <p class="text-xs text-gray-500">今天 09:15 - 客厅</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    3小时前
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">系统自检完成</p>
+                    <p class="text-xs text-gray-500">今天 08:00 - 自动</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    4小时前
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-3">
+                    <i class="fas fa-door-closed"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">前门已锁定</p>
+                    <p class="text-xs text-gray-500">今天 07:45 - 张先生</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    4小时前
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-3">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">前门已开启</p>
+                    <p class="text-xs text-gray-500">今天 07:30 - 张先生</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    5小时前
+                </div>
+            </div>
+        </div>
+        
+        <!-- 昨日活动 -->
+        <div class="date-divider">
+            <span class="text-sm text-gray-500 font-medium">昨天</span>
+        </div>
+        
+        <div class="card">
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">烟雾报警触发</p>
+                    <p class="text-xs text-gray-500">昨天 19:20 - 厨房</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    昨天
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-3">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">检测到人员活动</p>
+                    <p class="text-xs text-gray-500">昨天 18:45 - 门口</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    昨天
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-3">
+                    <i class="fas fa-door-closed"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">后门已锁定</p>
+                    <p class="text-xs text-gray-500">昨天 17:30 - 自动</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    昨天
+                </div>
+            </div>
+        </div>
+        
+        <!-- 更早活动 -->
+        <div class="date-divider">
+            <span class="text-sm text-gray-500 font-medium">更早</span>
+        </div>
+        
+        <div class="card">
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">系统设置已更新</p>
+                    <p class="text-xs text-gray-500">2023-06-15 14:30 - 管理员</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    3天前
+                </div>
+            </div>
+            
+            <div class="activity-item flex items-center p-3 hover:bg-gray-50 rounded-lg">
+                <div class="activity-icon w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-800">安防评估完成</p>
+                    <p class="text-xs text-gray-500">2023-06-15 10:15 - 系统</p>
+                </div>
+                <div class="text-xs text-gray-400">
+                    3天前
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <div class="tab-bar">
+        <div class="tab-item" onclick="location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </div>
+        <div class="tab-item" onclick="location.href='ai_chat.html'">
+            <i class="fas fa-robot"></i>
+            <span>智能问答</span>
+        </div>
+        <div class="tab-item" onclick="location.href='solution_design.html'">
+            <i class="fas fa-drafting-compass"></i>
+            <span>方案设计</span>
+        </div>
+        <div class="tab-item" onclick="location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

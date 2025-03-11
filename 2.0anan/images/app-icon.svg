@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="90" fill="#5D5FEF" />
+  
+  <!-- 内部安全盾牌形状 -->
+  <path d="M100,30 L160,50 C160,50 160,105 100,170 C40,105 40,50 40,50 L100,30 Z" fill="#FFFFFF" />
+  
+  <!-- 中文"安"字 -->
+  <text x="100" y="120" font-family="'PingFang SC', 'Helvetica Neue', Arial, sans-serif" font-size="70" font-weight="bold" text-anchor="middle" fill="#5D5FEF">安</text>
+</svg> 

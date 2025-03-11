@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安安 - 设备管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .device-card {
+            transition: all 0.3s ease;
+        }
+        .device-card:hover {
+            transform: translateY(-5px);
+        }
+        .device-icon {
+            transition: all 0.3s ease;
+        }
+        .device-card:hover .device-icon {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="status-bar">
+        <div class="time">12:30</div>
+        <div class="icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-bar">
+        <div class="title">设备管理</div>
+        <div class="action" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content pb-20 animate-fade-in">
+        <!-- 设备分类 -->
+        <div class="flex overflow-x-auto py-2 mb-4 no-scrollbar">
+            <div class="flex-shrink-0 px-4 py-2 bg-primary-color text-white rounded-full mr-2">全部设备</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">门锁</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">摄像头</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">传感器</div>
+            <div class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full mr-2 shadow">报警器</div>
+        </div>
+
+        <!-- 设备状态概览 -->
+        <div class="card mb-6 gradient-bg">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-white">设备状态概览</h3>
+                <span class="badge bg-green-500 text-white">全部在线</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-primary-color">12</div>
+                    <div class="text-xs text-gray-600">总设备</div>
+                </div>
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-green-500">12</div>
+                    <div class="text-xs text-gray-600">在线</div>
+                </div>
+                <div class="text-center glass-card p-3 rounded-lg">
+                    <div class="text-2xl font-bold text-gray-400">0</div>
+                    <div class="text-xs text-gray-600">离线</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 设备列表 -->
+        <h3 class="text-lg font-bold mb-4 text-gray-800">门锁</h3>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-door-closed text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">前门</p>
+                            <p class="text-xs text-gray-500">智能门锁 - 已锁定</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">电量: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-door-closed text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">后门</p>
+                            <p class="text-xs text-gray-500">智能门锁 - 已锁定</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">电量: 92%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4 text-gray-800">摄像头</h3>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-camera text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">客厅</p>
+                            <p class="text-xs text-gray-500">监控摄像头 - 正常工作</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">已录制: 12小时</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-camera text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">门口</p>
+                            <p class="text-xs text-gray-500">监控摄像头 - 正常工作</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">已录制: 12小时</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4 text-gray-800">传感器</h3>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-bell text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">卧室</p>
+                            <p class="text-xs text-gray-500">烟雾报警器 - 正常</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">电量: 78%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="device-card card">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="device-icon w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-primary-color mr-4">
+                            <i class="fas fa-water text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">厨房</p>
+                            <p class="text-xs text-gray-500">水浸传感器 - 正常</p>
+                            <div class="flex items-center mt-1">
+                                <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>
+                                <span class="text-xs text-green-500">在线</span>
+                                <span class="text-xs text-gray-400 ml-2">电量: 65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <div class="tab-bar">
+        <div class="tab-item" onclick="location.href='home.html'">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </div>
+        <div class="tab-item" onclick="location.href='ai_chat.html'">
+            <i class="fas fa-robot"></i>
+            <span>智能问答</span>
+        </div>
+        <div class="tab-item" onclick="location.href='solution_design.html'">
+            <i class="fas fa-drafting-compass"></i>
+            <span>方案设计</span>
+        </div>
+        <div class="tab-item" onclick="location.href='profile.html'">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
