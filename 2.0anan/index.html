@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安安 - 安防AI智能助手</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .prototype-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background-color: white;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin: 0 auto;
+            border: 10px solid #000;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .screen iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .screen-label {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-blue-600 text-white p-6 shadow-md">
+        <h1 class="text-3xl font-bold">安安 - 安防AI智能助手原型</h1>
+        <p class="mt-2">高保真UI原型展示</p>
+    </header>
+
+    <div class="prototype-container">
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="welcome.html" title="欢迎界面"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">欢迎/登录界面</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="home.html" title="主页"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">主页</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="ai_chat.html" title="智能问答"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">智能问答</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="solution_design.html" title="方案设计"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">方案设计</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="security_assessment.html" title="安防评估"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">安防评估</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="expert_consult.html" title="专家咨询"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">专家咨询</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="knowledge.html" title="知识库"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">知识库</div>
+        </div>
+        
+        <div>
+            <div class="phone-frame">
+                <div class="screen">
+                    <iframe src="profile.html" title="个人中心"></iframe>
+                </div>
+            </div>
+            <div class="screen-label">个人中心</div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
